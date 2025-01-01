@@ -1,0 +1,53 @@
+---
+import Window from "../../components/Window.astro";
+import Layout from "../../layouts/Layout.astro";
+import Button from "../../components/Button.astro";
+import stack from "@assets/icons/stack.png";
+import { getProjects } from "../../lib";
+
+const projects = await getProjects();
+---
+
+<Layout title="Projects">
+  <Window title="Projects" close="/desktop">
+    <h1>Projects</h1>
+    <p>Here are some things I've built</p>
+    <div class="icon-grid">
+      {
+        projects.map((project) => (
+          <Button
+            title={project.data.title}
+            icon={project.data.icon?.src ?? stack.src}
+            link={`/projects/${project.id}`}
+          />
+        ))
+      }
+      <Button title="HyperSite" icon={stack.src} link="/hypersite" />
+    </div>
+  </Window>
+</Layout>
+<style>
+  .icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  h1 {
+    font-family: var(--title-font);
+    font-weight: normal;
+    line-height: 1.5;
+    margin: 0;
+    text-align: center;
+  }
+  p {
+    font-family: var(--body-font);
+    font-size: 18px;
+    text-align: center;
+  }
+
+  a:link,
+  a:visited {
+    color: inherit;
+  }
+</style>

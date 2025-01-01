@@ -1,0 +1,182 @@
+---
+import { type CollectionEntry, render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Window from "@components/Window.astro";
+import Button from "@components/Button.astro";
+import filing from "@assets/icons/filing.png";
+import juggler from "@assets/icons/juggler-2.png";
+import IconGrid from "@components/IconGrid.astro";
+import left from "@assets/icons/left.png";
+import right from "@assets/icons/right.png";
+import { Image } from "astro:assets";
+import Nav from "@components/Nav.astro";
+import home from "@assets/icons/home.png";
+import { getProjects } from "../../lib";
+interface Props {
+  entry: CollectionEntry<"work">;
+  allEntries: CollectionEntry<"work">[];
+}
+
+export async function getStaticPaths() {
+  const work = await getProjects();
+  return work.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry, allEntries: work },
+  }));
+}
+
+const { entry, allEntries } = Astro.props;
+const currentIndex = allEntries.findIndex((e) => e.id === entry.id);
+const { Content } = await render(entry);
+---
+
+<Layout title={entry.data.title} description={entry.data.description}>
+  <Window title={entry.data.title} close="/desktop">
+    <main>
+      <h1>{entry.data.title}</h1>
+      <p class="description">{entry.data.description}</p>
+      {
+        entry.data.tags && entry.data.tags.length > 0 && (
+          <div class="tags">
+            {entry.data.tags.map((tag) => (
+              <span class="tag">{tag}</span>
+            ))}
+          </div>
+        )
+      }
+      <Content />
+      <IconGrid>
+        {
+          entry.data.repo && (
+            <Button
+              title="Repo"
+              icon={filing.src}
+              link={`https://github.com/${entry.data.repo}`}
+            />
+          )
+        }
+        {
+          entry.data.demo && (
+            <Button title="Site" icon={juggler.src} link={entry.data.demo} />
+          )
+        }
+      </IconGrid>
+    </main>
+    <div class="nav">
+      {
+        currentIndex > 0 ? (
+          <Nav class="button">
+            <a href={`/projects/${allEntries[currentIndex - 1].id}`}>
+              <Image src={left} alt="Previous" />
+              <span>{allEntries[currentIndex - 1].data.title}</span>
+            </a>
+          </Nav>
+        ) : (
+          <a />
+        )
+      }
+      <Nav class="button">
+        <a href="/"><Image src={home} alt="Home" /></a>
+      </Nav>
+      {
+        currentIndex < allEntries.length - 1 ? (
+          <Nav class="button">
+            <a href={`/projects/${allEntries[currentIndex + 1].id}`}>
+              <span>{allEntries[currentIndex + 1].data.title}</span>
+              <Image src={right} alt="Next" />
+            </a>
+          </Nav>
+        ) : (
+          <a />
+        )
+      }
+    </div>
+  </Window>
+</Layout>
+
+<style>
+  .nav {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr min-content 1fr;
+    align-items: stretch;
+    font-family: var(--body-font);
+    text-align: center;
+    gap: 1rem;
+  }
+  .button {
+    display: grid;
+  }
+  .nav a:link,
+  .nav a:visited {
+    color: inherit;
+    display: flex;
+    align-items: center;
+    cursor: var(--cursor-pointer);
+    font-weight: bold;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+  .button:last-child a {
+    justify-content: flex-end;
+  }
+  .button:first-child a {
+    justify-content: flex-start;
+  }
+
+  @media screen and (max-width: 800px) {
+    .nav span {
+      display: none;
+    }
+    .nav > a {
+      justify-content: center;
+    }
+    .nav > a:last-child {
+      display: none;
+    }
+    .nav > a:first-child {
+      display: none;
+    }
+  }
+
+  .icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 80px);
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  .description {
+    font-size: 18px;
+  }
+  h1 {
+    font-family: var(--title-font);
+    font-weight: normal;
+    line-height: 1.2;
+    margin: 0;
+  }
+  main {
+    font-family: var(--body-font);
+    font-size: 18px;
+  }
+  main :global(a:link),
+  main :global(:visited) {
+    color: inherit;
+    cursor: var(--cursor-pointer);
+    font-weight: bold;
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+  }
+  .tag {
+    background: #fff;
+    border: 2px solid #000;
+    padding: 0.25rem 0.5rem;
+    font-family: var(--body-font);
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 2px 2px 0 #000;
+  }
+</style>
