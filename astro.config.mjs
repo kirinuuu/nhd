@@ -1,12 +1,15 @@
 // @ts-check
 import { defineConfig } from "astro/config";
-import { FontaineTransform } from "fontaine";
 
 // https://astro.build/config
 export default defineConfig({
+  build:{
+    inlineStylesheets: "always"
+  },
   devToolbar: {
     enabled: false,
   },
+  compressHTML:false,
   vite: {
     resolve: {
       alias: {
@@ -17,38 +20,10 @@ export default defineConfig({
     build: {
       assetsInlineLimit: 20048,
     },
-
-    plugins: [
-      FontaineTransform.vite({
-        fallbacks: [
-          "BlinkMacSystemFont",
-          "Segoe UI",
-          "Roboto",
-          "Helvetica Neue",
-          "Arial",
-        ],
-        resolvePath: (id) => new URL(`./public${id}`, import.meta.url),
-      }),
-    ],
   },
 
   experimental: {
-    csp: {
-      directives: [
-        "default-src 'self'",
-        "img-src 'self' data:",
-        "font-src 'self'",
-        "object-src 'none'",
-        "base-uri 'self'",
-        "form-action 'self'",
-        "frame-ancestors 'none'",
-        //"upgrade-insecure-requests",
-        "connect-src 'self'",
-        "manifest-src 'self'",
-        "media-src 'self'",
-        "worker-src 'none'",
-        "child-src 'none'",
-      ],
-    },
+    csp:false
   },
+
 });
