@@ -24,9 +24,9 @@ const { class: className, ...rest } = Astro.props;
   {
     five.map((_, idx) => (
       <img
-        src="/14185584/uploaded/toast.webp"
+        src="/14185584/uploaded/bread.webp"
         alt="Toast"
-        class={`toast toast-${idx + 1}`}
+        class={`toaster toast-${idx + 1}`}
         loading="lazy"
       />
     ))
@@ -49,19 +49,10 @@ const { class: className, ...rest } = Astro.props;
     height: 200px;
   }
 
-  .toast {
-    width: 165px;
-    height: 129px;
-  }
-
   @media screen and (max-width: 800px) {
     .toaster {
       width: 100px;
       height: 100px;
-    }
-    .toast {
-      width: 83px;
-      height: 64px;
     }
   }
 

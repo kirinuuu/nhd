@@ -2,43 +2,36 @@
 import Window from "@components/Window.astro";
 import Layout from "../layouts/Layout.astro";
 import Button from "@components/Button.astro";
+import applescript from "@assets/icons/applescript.png";
+import camera from "@assets/icons/camera.png";
+import moon from "@assets/icons/moon.png";
+import robot from "@assets/icons/robot.png";
 import stack from "@assets/icons/stack.png";
 import PixelImg from "@components/PixelImg.astro";
 import home from "@assets/icons/home.png";
 import IconGrid from "@components/IconGrid.astro";
-import { getProjects } from "../lib";
-
-const projects = await getProjects();
----
+---]
 
 <Layout
-  title="Matt Kane"
-  description="Matt Kane's site that looks like it was built in 1991"
+  title="Revolution Reaction Reform Apple II"
+  description="How the Apple II Caused Revolution, Reaction, and Reform"
 >
-  <Window title="Matt Kane" close="/desktop">
+  <Window title="Apple II" close="/desktop">
     <h1>
-      <PixelImg src={home.src} width={28} height={25} alt="" /> Matt's home stack
+      <PixelImg src={home.src} width={28} height={25} alt="" />Home Stack
       <PixelImg src={home.src} width={28} height={25} alt="" />
     </h1>
     <p>
-      I build tools to help people create better websites. Read <a href="/about"
-        >about me</a
-      >, or find me on <a href="https://github.com/ascorbic">GitHub</a> or <a
-        href="https://bsky.app/profile/mk.gg">Bluesky</a
-      >.
+      How the Apple II Caused Revolution, Reaction, and Reform.
     </p>
 
     <h2>Projects</h2>
     <IconGrid>
-      {
-        projects.map((project) => (
-          <Button
-            title={project.data.title}
-            icon={project.data.icon?.src ?? stack.src}
-            link={`/projects/${project.id}`}
-          />
-        ))
-      }
+     
+      <Button title="Page 1" icon={applescript.src} link="/applescript" />
+      <Button title="Page 2" icon={camera.src} link="/camera" />
+      <Button title="Page 3" icon={moon.src} link="/moon" />
+      <Button title="Page 4" icon={robot.src} link="/robot" />
       <Button title="HyperSite" icon={stack.src} link="/hypersite" />
     </IconGrid>
   </Window>
