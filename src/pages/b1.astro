@@ -1,5 +1,4 @@
 ---
-import { type CollectionEntry, render } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import Window from "@components/Window.astro";
 import Button from "@components/Button.astro";
@@ -13,22 +12,22 @@ import Nav from "@components/Nav.astro";
 import home from "@assets/icons/home.png";
 ---
 
-<Layout title="Bucket 1" description="This is my first bucket">
-  <Window title="Bucket 1" close="/desktop">
+<Layout title="Killer Applications" description="The Apple II's greatest selling point">
+  <Window title="Killer Applications" close="/desktop">
     <main>
-      <h1>Bucket 1</h1>
-      <p class="description">This is my first bucket</p>
+      <h1>Killer Applications</h1>
+      <p class="description">The Apple II's greatest selling point</p>
       {
         <div class="tags">
-            <span class="tag">Tag 1</span>
-            <span class="tag">Tag 2</span>
-            <span class="tag">Tag 3</span>
+            <span class="tag">Revolution</span>
+            <span class="tag">Reaction</span>
+            <span class="tag">Reform</span>
         </div>
       }
       <main>
         <h1>Hello!</h1>
         <p>
-          This is some text.
+          In a 1996 NHK documentary interview, Steve Jobs stated that “VisiCalc propelled the success of Apple more than any other single event.”, and even went so far as to say that “If VisiCalc had been written for some other computer, you would be interviewing somebody else right now.” VisiCalc, the killer application for the Apple II Computer, changed the lives of everyone involved in financial forecasting. It allowed them to do days and weeks worth of work in mere hours, and allowed them to be more creative with the technology, asking “what if?” questions to test their theories. This extraordinary feature added to the Apple II was created by Dan Bricklin and Bob Frankston. In our interview with Dan Bricklin, he revealed that some thought of VisiCalc as their superpower, and didn’t want anybody else to discover it. He states that being the only person who had VisiCalc made users feel like “nobody had Google, but you. Nobody had Wikipedia, but you. Nobody had AI…but you. They had this new tool that let them do in 10 minutes what would have taken hours and days to do otherwise.” VisiCalc played a crucial role in opening up personal computers to everybody. Because of it, families started having a reason to buy one; VisiCalc could help calculate all family expenses, from entertainment budgets to heating bills.
         </p>
       </main>
       <IconGrid>

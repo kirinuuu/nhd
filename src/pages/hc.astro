@@ -1,5 +1,4 @@
 ---
-import { type CollectionEntry, render } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import Window from "@components/Window.astro";
 import Button from "@components/Button.astro";
@@ -13,22 +12,22 @@ import Nav from "@components/Nav.astro";
 import home from "@assets/icons/home.png";
 ---
 
-<Layout title="Historical Context" description="This is my historical context">
+<Layout title="Historical Context" description="The Apple II Viewed Through Historical Lenses">
   <Window title="Historical Context" close="/desktop">
     <main>
       <h1>Historical Context</h1>
-      <p class="description">This is my historical context</p>
+      <p class="description">The Apple II Viewed Through Historical Lenses</p>
       {
         <div class="tags">
-            <span class="tag">Tag 1</span>
-            <span class="tag">Tag 2</span>
-            <span class="tag">Tag 3</span>
+            <span class="tag">Social</span>
+            <span class="tag">Economic</span>
+            <span class="tag">political</span>
         </div>
       }
       <main>
-        <h1>Hello!</h1>
+      
         <p>
-          This is some text.
+          The Apple II was the revolutionary computer which remains the longest manufactured device from Apple (1977-1993), and was also a pioneering personal computer in the 1977 Trinity. The first prototype of the Apple II was created by Steve Wozniak during his time in the Homebrew Computer Club, a Silicon Valley gathering of computer hobbyists that branched from the creation of the Altair 8800, and was heavily inspired by his work on the Atari arcade game, Breakout, as he stated that he wanted to bring the same level of color graphics and gaming capability to a personal computer. Steve Jobs and Steve Wozniak started the company Apple in 1976, when Jobs saw the commercial potential for the prototype computer, and they tweaked the design into something geared more towards the public, focusing in critical, alluring aspects such as accessibility, functionality, and design. The formation of Apple led to the widespread exposure of the Apple II to the public and its significant mark being left in computer history. 
         </p>
       </main>
       <IconGrid>

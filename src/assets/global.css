@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 * {
   box-sizing: border-box;
   -webkit-font-smoothing: none;
@@ -8,9 +10,9 @@
 }
 
 :root {
-  --title-font: "Chicago", "Chicago fallback";
-  --body-font: "Geneva12", "Geneva12 fallback";
-  --caption-font: "Geneva91", "Geneva91 fallback";
+  --title-font: "VT323";
+  --body-font: "VT323";
+  --caption-font: "VT323";
   --container-padding: 2rem;
 }
 

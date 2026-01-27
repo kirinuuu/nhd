@@ -1,5 +1,4 @@
 ---
-import { type CollectionEntry, render } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import Window from "@components/Window.astro";
 import Button from "@components/Button.astro";
@@ -13,30 +12,29 @@ import Nav from "@components/Nav.astro";
 import home from "@assets/icons/home.png";
 ---
 
-<Layout title="Claim" description="This is my claim">
+<Layout title="Claim" description="How the Apple II Impacted Revolution, Reaction, and Reform">
   <Window title="Claim" close="/desktop">
     <main>
       <h1>Claim</h1>
-      <p class="description">This is my claim</p>
+      <p class="description">How the Apple II Impacted Revolution, Reaction, and Reform</p>
       {
         <div class="tags">
-            <span class="tag">Tag 1</span>
-            <span class="tag">Tag 2</span>
-            <span class="tag">Tag 3</span>
+            <span class="tag">Revolution</span>
+            <span class="tag">Reaction</span>
+            <span class="tag">Reform</span>
         </div>
       }
       <main>
-        <h1>Hello!</h1>
+        <h1>The Apple II was not designed like an ordinary product. It used crazy tricks everywhere.
+          -Andy Hertzfeld 
+        </h1>
         <p>
-          This is some text.
+          Before the Apple II’s release in 1977, many struggled to understand why they would need a home computer, and how it could enhance creativity and improve business efficiency. Additionally, earlier computers were expensive, non-user-friendly, and required extensive technical knowledge and programming skills, resulting in their use primarily by hobbyists and engineers (who were, at that time, mainly rich white males). The Apple II revolution, a pivotal technological advancement, sparked demand for accessible, modern personal devices. This revolution caused a positive reaction from the public, which reformed how personal computers impacted daily life. This advancement challenged computer norms, pushing computers away from the realm of hobbyists and engineers and onto the desktops of schools, homes, and offices. 
+
         </p>
       </main>
       <IconGrid>
-          <Button
-            title="Repo"
-            icon={filing.src}
-            link={`https://github.com/kirinuuu/nhd`}
-          />
+          
       </IconGrid>
     </main>
     <div class="nav">

@@ -1,5 +1,4 @@
 ---
-import { type CollectionEntry, render } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import Window from "@components/Window.astro";
 import Button from "@components/Button.astro";
@@ -13,11 +12,11 @@ import Nav from "@components/Nav.astro";
 import home from "@assets/icons/home.png";
 ---
 
-<Layout title="Impacts" description="These are the short and long term impacts">
-  <Window title="Impacts" close="/desktop">
+<Layout title="Long Term Impacts" description="The Apple II's Prolongued Effects">
+  <Window title="Long Term Impacts" close="/desktop">
     <main>
-      <h1>Impacts</h1>
-      <p class="description">These are the short and long term impacts</p>
+      <h1>Long Term Impacts</h1>
+      <p class="description">The Apple II's Prolongued Effects</p>
       {
         <div class="tags">
             <span class="tag">Tag 1</span>
@@ -41,17 +40,17 @@ import home from "@assets/icons/home.png";
     </main>
     <div class="nav">
       <Nav class="button">
-        <a href="/b1">
+        <a href="/impacts">
           <Image src={left} alt="Previous" />
-          <span>Bucket 1</span>
+          <span>Impacts</span>
         </a>
       </Nav>
       <Nav class="button">
         <a href="/"><Image src={home} alt="Home" /></a>
       </Nav>
         <Nav class="button">
-          <a href="/b3">
-            <span>Bucket 3</span>
+          <a href="/short">
+            <span>Short Term Impacts</span>
             <Image src={right} alt="Next" />
           </a>
         </Nav>

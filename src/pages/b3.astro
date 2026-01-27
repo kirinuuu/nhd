@@ -1,5 +1,4 @@
 ---
-import { type CollectionEntry, render } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import Window from "@components/Window.astro";
 import Button from "@components/Button.astro";
@@ -13,11 +12,11 @@ import Nav from "@components/Nav.astro";
 import home from "@assets/icons/home.png";
 ---
 
-<Layout title="Bucket 3" description="This is my third bucket">
-  <Window title="Bucket 3" close="/desktop">
+<Layout title="Education" description="How the Apple II Brought Computing to Schools">
+  <Window title="Education" close="/desktop">
     <main>
-      <h1>Bucket 3</h1>
-      <p class="description">This is my third bucket</p>
+      <h1>Education</h1>
+      <p class="description">How the Apple II Brought Computing to Schools</p>
       {
         <div class="tags">
             <span class="tag">Tag 1</span>
@@ -28,7 +27,8 @@ import home from "@assets/icons/home.png";
       <main>
         <h1>Hello!</h1>
         <p>
-          This is some text.
+          The software base for the Apple II is largely educational. It was handed out to approximately 9,000-10,000 schools in California, capturing 60% of the education market. Apple’s initiative, Kids Can’t Wait (KCW), was trying to help the spread of personal computers happen faster. To do that, they decided to move them into schools, so the usage of computers could be normalized and taught. Before the Apple II, education was a lot slower, and many children did not have access to the necessary resources due to neglect from the education system. With the arrival of the Apple II, kids had access to online educational materials which were professionally done. It offered a step up from the traditional approach. This reformed the ways schools use computers and brought them from large bulky supercomputers in inaccessible college campuses to the desks of schoolchildren. Many schools saw how effective the usage of personal computers was and supplied them to students, leading to an increase in opportunities for otherwise overlooked children, and leading to more future innovations to improve education, people started to publish more educational resources digitally.
+
         </p>
       </main>
       <IconGrid>

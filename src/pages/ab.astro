@@ -1,5 +1,4 @@
 ---
-import { type CollectionEntry, render } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import Window from "@components/Window.astro";
 import Button from "@components/Button.astro";
@@ -13,11 +12,11 @@ import Nav from "@components/Nav.astro";
 import home from "@assets/icons/home.png";
 ---
 
-<Layout title="Documents" description="These are my documents">
-  <Window title="Conclusion" close="/desktop">
+<Layout title="Annotated Bibliography" description="This is my Annotated Bibliography">
+  <Window title="Annotated Bibliography" close="/desktop">
     <main>
-      <h1>conclusion</h1>
-      <p class="description">This is my conclusion</p>
+      <h1>Annotated Bibliography</h1>
+      <p class="description">This is my Annotated Bibliography</p>
       {
         <div class="tags">
             <span class="tag">Tag 1</span>
@@ -33,9 +32,9 @@ import home from "@assets/icons/home.png";
       </main>
       <IconGrid>
           <Button
-            title="Repo"
+            title="Annotated Bibliography"
             icon={filing.src}
-            link="/long"
+            link="/"
           />
            <Button
             title="Repo"

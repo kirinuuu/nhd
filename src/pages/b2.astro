@@ -1,5 +1,4 @@
 ---
-import { type CollectionEntry, render } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import Window from "@components/Window.astro";
 import Button from "@components/Button.astro";
@@ -13,11 +12,11 @@ import Nav from "@components/Nav.astro";
 import home from "@assets/icons/home.png";
 ---
 
-<Layout title="Bucket 2" description="This is my second bucket">
-  <Window title="Bucket 2" close="/desktop">
+<Layout title="Accessibility" description="What Made the Apple II Available for All Users">
+  <Window title="Accessibility" close="/desktop">
     <main>
-      <h1>Bucket 2</h1>
-      <p class="description">This is my second bucket</p>
+      <h1>Accessibility</h1>
+      <p class="description">What Made the Apple II Available for All Users</p>
       {
         <div class="tags">
             <span class="tag">Tag 1</span>
@@ -28,7 +27,8 @@ import home from "@assets/icons/home.png";
       <main>
         <h1>Hello!</h1>
         <p>
-          This is some text.
+          The Apple II was both inexpensive and compact. The use of the MOS6502, an inexpensive yet extremely hard to put to use microprocessor, allowed for the cheap mass production of the Apple II and its compact body. Before the Apple II, computers were largely inaccessible to non computer-hobbyists. With its pre-assembled design, easily understandable operating system, unbelievable cost for quality, and unrivaled user interface, the Apple II pulled ahead in the market with a wider range of customers. Before minicomputers such as the Apple II, mainframes used to take up entire rooms. In the article ‘Origins of the Apple I and II’, it states that “ENIAC was completed in 1946 and was more than 136 square meters and used 18,000 vacuum tubes. It was capable of computing the sum of 5,000 numbers ten digits in length per second, about the equivalent of a modern pocket calculator.” Meanwhile the Apple II could fit on an office desk and had astounding processing capabilities. 
+
         </p>
       </main>
       <IconGrid>
